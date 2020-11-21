@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 const middleware = require('./middleware');
+const logs = require('./api/logs');
 
 const app = express();
 
@@ -21,14 +22,17 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.json({
         message: 'Hello world',
     });
 });
 
-app.use(middleware.notFound);
+app.use('/api/logs', logs)
 
+app.use(middleware.notFound);
 app.use(middleware.errorHandler);
 
 const port = process.env.PORT || 1337;
