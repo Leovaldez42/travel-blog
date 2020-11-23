@@ -37,7 +37,7 @@ const App = () => {
 								
 						<div 							
 							onClick={() => setShowPopup({
-							showPopup,
+							// showPopup,
 							[entry._id] : true,
 							})}
 						>
@@ -60,11 +60,13 @@ const App = () => {
 									longitude={entry.longitude}
 									closeButton={true}
 									closeOnClick={false}
-									onClose={() => this.setState({showPopup: false})}
+									dynamicPosition={true}
+									onClose={() => setShowPopup({})}
 									anchor="top" >
-									<div>
+									<div className="popup">
 										<h3> { entry.title } </h3>
-										<p> { entry.comments } </p>
+										<p> { entry.comment } </p>
+										<small>Visited on: {new Date(entry.visiDte).toLocaleDateString()} </small>
 									</div>
 								</Popup>
 							) : null
