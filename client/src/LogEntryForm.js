@@ -27,8 +27,8 @@ const LogEntryForm = ({ location, onClose }) => {
       { error ? <h3 className="error">{error}</h3> : null}
       <label htmlFor="title">Title</label>
       <input name="title" required ref={register} />
-      <label htmlFor="comments">Comments</label>
-      <textarea name="comments" rows={3} ref={register}></textarea>
+      <label htmlFor="comment">Comments</label>
+      <textarea name="comment" rows={3} ref={register}></textarea>
       <label htmlFor="description">Description</label>
       <textarea name="description" rows={3} ref={register}></textarea>
       <label htmlFor="image">Image</label>
