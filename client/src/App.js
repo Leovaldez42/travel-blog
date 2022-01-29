@@ -83,7 +83,7 @@ const App = () => {
                   anchor="top" >
                   <div className="popup">
                     <h3>{entry.title}</h3>
-                    <p>{entry.comment}</p>
+                    <p>{entry.comments}</p>
                     <small>Visited on: {new Date(entry.visitDate).toLocaleDateString()}</small>
                     {entry.image && <img src={entry.image} alt={entry.title} />}
                   </div>
